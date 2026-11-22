@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aventura Matemática</title>
+<style>
+body{margin:0;font-family:"Comic Sans MS",cursive;background:#fff4e8;text-align:center;color:#574b78}
+header{background:linear-gradient(120deg,#ff91bb,#a58cff,#75d9e9);color:white;padding:35px 10px;border-radius:0 0 35px 35px}
+h1{font-size:36px}
+.contenedor{padding:25px}
+.menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:1000px;margin:auto}
+.tarjeta{background:white;padding:25px;border-radius:25px;box-shadow:0 5px 12px #ddd}
+.dibujo{font-size:65px}
+h2{color:#916cc7}
+.boton{display:inline-block;padding:13px 22px;border-radius:20px;background:#ff91bb;color:white;text-decoration:none;font-weight:bold}
+.boton:hover{background:#df6398}
+footer{background:#a58cff;color:white;padding:20px;margin-top:30px}
+</style>
+</head>
+<body>
+<header>
+<div style="font-size:55px">🌈 ⭐ 🐻</div>
+<h1>¡AVENTURA MATEMÁTICA!</h1>
+<p>Aprende, juega y diviértete con los números</p>
+<h3>Primer grado de primaria 📚</h3>
+</header>
+<div class="contenedor">
+<h2>¡Hola, pequeño explorador! 🐰</h2>
+<p>Elige una aventura y demuestra cuánto sabes de matemáticas.</p>
+<div class="menu">
+<div class="tarjeta">
+<div class="dibujo">🍎➕🍎</div>
+<h2>Mundo de las sumas</h2>
+<p>Aprende a sumar jugando.</p>
+<a href="sumas.html" class="boton">Entrar a sumas</a>
+</div>
+<div class="tarjeta">
+<div class="dibujo">🐰🥕</div>
+<h2>Mundo de las restas</h2>
+<p>Aprende a quitar y restar.</p>
+<a href="restas.html" class="boton">Entrar a restas</a>
+</div>
+<div class="tarjeta">
+<div class="dibujo">🦋🔢</div>
+<h2>Aprende a contar</h2>
+<p>Cuenta los dibujos y números.</p>
+<a href="contar.html" class="boton">Entrar a contar</a>
+</div>
+<div class="tarjeta">
+<div class="dibujo">🏆🎮</div>
+<h2>Juegos matemáticos</h2>
+<p>Resuelve retos y gana estrellas.</p>
+<a href="juegos.html" class="boton">Entrar a juegos</a>
+</div>
+</div>
+</div>
+<footer>
+<h3>🌟 ¡Aprender es una aventura! 🌟</h3>
+</footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Juego de sumas</title>
+<style>
+body{background:#fff0f6;font-family:"Comic Sans MS";text-align:center;padding:25px;color:#684c83}
+main{background:white;padding:25px;border-radius:25px;max-width:500px;margin:30px auto}
+h1{color:#ed79a9}
+.dibujo{font-size:65px}
+input{padding:12px;font-size:22px;width:100px;border-radius:12px}
+button,a{padding:12px 20px;background:#ff91bb;color:white;border:0;border-radius:18px;text-decoration:none;font-size:17px;cursor:pointer;margin:5px}
+</style>
+</head>
+<body>
+<main>
+<div class="dibujo">🍎🐻🍎</div>
+<h1>¡Vamos a sumar!</h1>
+<p>Ayuda al osito a juntar las manzanas.</p>
+<h2 id="pregunta">3 + 2 = ?</h2>
+<input id="respuesta" type="number">
+<br><br>
+<button onclick="comprobar()">Comprobar</button>
+<button onclick="nueva()">Otra suma</button>
+<h3 id="resultado"></h3>
+<a href="index.html">🏠 Volver al inicio</a>
+</main>
+<script>
+let a=3,b=2;
+function nueva(){
+a=Math.floor(Math.random()*10);
+b=Math.floor(Math.random()*10);
+document.getElementById("pregunta").innerText=a+" + "+b+" = ?";
+document.getElementById("respuesta").value="";
+document.getElementById("resultado").innerText="";
+}
+function comprobar(){
+let r=document.getElementById("respuesta").value;
+if(r==="")return;
+document.getElementById("resultado").innerText=
+Number(r)===a+b?"¡Excelente! 🎉 ⭐":"¡Inténtalo nuevamente! 💪";
+}
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Juego de restas</title>
+<style>
+body{background:#e9f8ff;font-family:"Comic Sans MS";text-align:center;padding:25px;color:#426c91}
+main{background:white;padding:25px;border-radius:25px;max-width:500px;margin:30px auto}
+h1{color:#48a8c8}
+.dibujo{font-size:65px}
+input{padding:12px;font-size:22px;width:100px;border-radius:12px}
+button,a{padding:12px 20px;background:#58c7dc;color:white;border:0;border-radius:18px;text-decoration:none;font-size:17px;cursor:pointer;margin:5px}
+</style>
+</head>
+<body>
+<main>
+<div class="dibujo">🐰🥕🥕</div>
+<h1>¡Vamos a restar!</h1>
+<p>Ayuda al conejito a quitar zanahorias.</p>
+<h2 id="pregunta">5 - 2 = ?</h2>
+<input id="respuesta" type="number">
+<br><br>
+<button onclick="comprobar()">Comprobar</button>
+<button onclick="nueva()">Otra resta</button>
+<h3 id="resultado"></h3>
+<a href="index.html">🏠 Volver al inicio</a>
+</main>
+<script>
+let a=5,b=2;
+function nueva(){
+a=Math.floor(Math.random()*10);
+b=Math.floor(Math.random()*(a+1));
+document.getElementById("pregunta").innerText=a+" - "+b+" = ?";
+document.getElementById("respuesta").value="";
+document.getElementById("resultado").innerText="";
+}
+function comprobar(){
+let r=document.getElementById("respuesta").value;
+if(r==="")return;
+document.getElementById("resultado").innerText=
+Number(r)===a-b?"¡Muy bien! 🏆":"¡Sigue intentando! 🌟";
+}
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aprende a contar</title>
+<style>
+body{background:#f0ffe9;font-family:"Comic Sans MS";text-align:center;padding:25px;color:#54804c}
+main{background:white;padding:25px;border-radius:25px;max-width:500px;margin:30px auto}
+h1{color:#79b85d}
+#objetos{font-size:45px;line-height:1.7}
+input{padding:12px;font-size:22px;width:100px;border-radius:12px}
+button,a{padding:12px 20px;background:#83c76c;color:white;border:0;border-radius:18px;text-decoration:none;font-size:17px;cursor:pointer;margin:5px}
+</style>
+</head>
+<body>
+<main>
+<div style="font-size:65px">🦋🌻🐞</div>
+<h1>¡Vamos a contar!</h1>
+<p>Cuenta cuántas fresas aparecen.</p>
+<div id="objetos">🍓 🍓 🍓</div>
+<input id="respuesta" type="number">
+<br><br>
+<button onclick="comprobar()">Comprobar</button>
+<button onclick="nuevo()">Otros dibujos</button>
+<h3 id="resultado"></h3>
+<a href="index.html">🏠 Volver al inicio</a>
+</main>
+<script>
+let cantidad=3;
+function nuevo(){
+cantidad=Math.floor(Math.random()*10)+1;
+document.getElementById("objetos").innerText="🍓 ".repeat(cantidad);
+document.getElementById("respuesta").value="";
+document.getElementById("resultado").innerText="";
+}
+function comprobar(){
+let r=document.getElementById("respuesta").value;
+if(r==="")return;
+document.getElementById("resultado").innerText=
+Number(r)===cantidad?"¡Felicidades! 🎉":"¡Cuenta otra vez! 🦋";
+}
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Retos matemáticos</title>
+<style>
+body{background:#fff5d9;font-family:"Comic Sans MS";text-align:center;padding:25px;color:#84642f}
+main{background:white;padding:25px;border-radius:25px;max-width:500px;margin:30px auto}
+h1{color:#e6a63d}
+button,a{padding:13px 20px;background:#ffbd55;color:white;border:0;border-radius:18px;text-decoration:none;font-size:18px;cursor:pointer;margin:5px}
+#opciones{margin:20px}
+</style>
+</head>
+<body>
+<main>
+<div style="font-size:65px">🏰🎁⭐</div>
+<h1>¡El gran reto matemático!</h1>
+<p>Elige la respuesta correcta.</p>
+<h2 id="pregunta"></h2>
+<div id="opciones"></div>
+<h3 id="resultado"></h3>
+<h3 id="puntos">Estrellas: 0 ⭐</h3>
+<button onclick="nuevo()">Otro reto 🎲</button>
+<br><br>
+<a href="index.html">🏠 Volver al inicio</a>
+</main>
+<script>
+let correcta=0,puntos=0;
+function nuevo(){
+let a=Math.floor(Math.random()*10);
+let b=Math.floor(Math.random()*10);
+let resta=Math.random()>.5;
+if(resta && a<b)[a,b]=[b,a];
+correcta=resta?a-b:a+b;
+document.getElementById("pregunta").innerText=
+a+(resta?" - ":" + ")+b+" = ?";
+let opciones=[correcta,correcta+1,Math.max(0,correcta-1)];
+opciones.sort(()=>Math.random()-.5);
+let caja=document.getElementById("opciones");
+caja.innerHTML="";
+opciones.forEach(n=>{
+let boton=document.createElement("button");
+boton.innerText=n;
+boton.onclick=()=>{
+if(n===correcta){
+puntos++;
+document.getElementById("resultado").innerText="¡Correcto! 🎉";
+document.getElementById("puntos").innerText="Estrellas: "+puntos+" ⭐";
+}else{
+document.getElementById("resultado").innerText="¡Inténtalo otra vez! 💪";
+}
+};
+caja.appendChild(boton);
+});
+document.getElementById("resultado").innerText="";
+}
+nuevo();
+</script>
+</body>
+</html>
